@@ -54,6 +54,37 @@ Investigated DNS lookups and domain resolution activity.
 * Process Analysis
 * Incident Investigation
 
+## Threat Hunting Findings
+
+### Finding 1 - PowerShell Reconnaissance
+
+Observed PowerShell spawning:
+
+* whoami.exe
+* hostname.exe
+* ipconfig.exe
+
+This activity is commonly seen during attacker reconnaissance after initial access.
+
+### Finding 2 - DNS Resolution
+
+Observed ping.exe generating DNS queries for google.com.
+
+Sysmon Event ID 22 successfully captured the DNS resolution activity.
+
+### Finding 3 - File Creation Monitoring
+
+Observed file creation events through Sysmon Event ID 11.
+
+The process responsible for file creation was successfully identified using Event Viewer.
+
+### Finding 4 - Browser Activity
+
+Observed chrome.exe process creation and related network activity.
+
+Process execution was tracked using Sysmon Event ID 1.
+
+
 ## Author
 
 Mohan R
